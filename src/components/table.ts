@@ -28,9 +28,11 @@ export default {
 
                 // Render the datatable if items exist
                 if (this.rows.length > 0) {
-                    // Render the datatable
-                    //debugger;
-                    //this.datatable = $(table.el).DataTable({});
+                    // You must initialize the datatable in a different thread
+                    setTimeout(() => {
+                        // Render the datatable
+                        this.datatable = $(table.el).DataTable({});
+                    }, 1000)
                 }
             },
             columns: [
