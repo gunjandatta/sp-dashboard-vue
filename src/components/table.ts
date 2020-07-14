@@ -1,12 +1,12 @@
 import * as $ from "jquery";
-import { Components, Helper, IconTypes, SPTypes, Types } from "gd-sprest-bs";
-import { Table } from "gd-sprest-bs-vue";
+import { Components, IconTypes, Types } from "gd-sprest-bs";
+import { Progress, Table } from "gd-sprest-bs-vue";
 import DataSource from "../ds";
 import { Views } from "../router";
 import store from "../store";
 
 export default {
-    components: { Table },
+    components: { Progress, Table },
     props: {
         filterText: { type: String },
         searchText: { type: String }
@@ -43,11 +43,10 @@ export default {
     },
     data() {
         return {
-            datatable: null,
             displayFormUrl: "",
             newFormUrl: "",
             items: null,
-            rows: [],
+            rows: null,
             table: null,
             onRenderTable(table: Components.ITable) {
                 // Save a reference to the table
@@ -56,7 +55,7 @@ export default {
                 // Render the datatable if items exist
                 if (this.rows.length > 0) {
                     // You must initialize the datatable in a different thread
-                    setTimeout(() => {
+                    setTimeout.apply(null, [() => {
                         // Render the datatable
                         store.datatable = $(table.el).DataTable({
                             dom: '<"row justify-content-between"<"col-sm-12"tr>"<"col"l><"col"f><"col"p>>'
@@ -67,7 +66,10 @@ export default {
                             // Search the table
                             store.datatable.search(store.searchText).draw();
                         }
-                    }, 1000)
+
+                        // Show the table
+                        table.el.classList.remove("d-none");
+                    }, 100]);
                 }
             },
             columns: [
@@ -82,22 +84,6 @@ export default {
                             type: Components.ButtonTypes.Secondary,
                             onClick: () => {
                                 Views.Item();
-                                return;
-                                // Ensure the form url exists
-                                if (this.props.displayFormUrl) {
-                                    // Show the display form
-                                    Helper.SP.ModalDialog.showModalDialog({
-                                        title: "View Item",
-                                        url: this.props.formUrl + "?ID=" + item.Id,
-                                        dialogReturnValueCallback: result => {
-                                            // See if the item was updated
-                                            if (result == SPTypes.ModalDialogResult.OK) {
-                                                // Refresh the page
-                                                document.location.reload();
-                                            }
-                                        }
-                                    });
-                                }
                             }
                         });
                     }
