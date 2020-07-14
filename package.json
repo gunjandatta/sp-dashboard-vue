@@ -14,8 +14,8 @@
     "url": "git+https://github.com/gunjandatta/sp-dashboard-vue.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Gunjan Datta <me@dattabase.com> (https://dattabase.com)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/gunjandatta/sp-dashboard-vue/issues"
   },

@@ -13,6 +13,7 @@ interface IFormUrls {
  * Item
  */
 interface IItem {
+    Id: number;
     ItemType: string;
     Status: string;
     Title: string;
@@ -63,11 +64,11 @@ export default class {
             } else {
                 // Return test data
                 resolve([
-                    { ItemType: "Type 1", Title: "Item 1", Status: "Draft" },
-                    { ItemType: "Type 1", Title: "Item 2", Status: "Submitted" },
-                    { ItemType: "Type 2", Title: "Item 3", Status: "Approved" },
-                    { ItemType: "Type 2", Title: "Item 4", Status: "Rejected" },
-                    { ItemType: "Type 3", Title: "Item 5", Status: "Draft" }
+                    { Id: 1, ItemType: "Type 1", Title: "Item 1", Status: "Draft" },
+                    { Id: 2, ItemType: "Type 1", Title: "Item 2", Status: "Submitted" },
+                    { Id: 3, ItemType: "Type 2", Title: "Item 3", Status: "Approved" },
+                    { Id: 4, ItemType: "Type 2", Title: "Item 4", Status: "Rejected" },
+                    { Id: 5, ItemType: "Type 3", Title: "Item 5", Status: "Draft" }
                 ]);
             }
         });

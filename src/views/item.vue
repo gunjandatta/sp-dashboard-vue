@@ -1,5 +1,8 @@
 <template>
-  <button @click="goBack">Back</button>
+  <div>
+    <button @click="goBack">Back</button>
+    <h1>Item {{ this.$route.params.id }}</h1>
+  </div>
 </template>
 
 <script>

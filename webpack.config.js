@@ -10,7 +10,7 @@ module.exports = (env, argv) => {
         // Output location
         output: {
             path: path.resolve(__dirname, "dist"),
-            filename: "app" + (argv.mode === "development" ? "" : ".min") + ".js"
+            filename: "app" + (argv.mode === "production" ? ".min" : "") + ".js"
         },
 
         // Resolve the file names

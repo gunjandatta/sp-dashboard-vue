@@ -75,7 +75,7 @@ export default {
             columns: [
                 {
                     name: "",
-                    title: "Title",
+                    title: "",
                     onRenderCell: (el, column, item: Types.SP.ListItem) => {
                         // Render a button
                         Components.Button({
@@ -83,7 +83,7 @@ export default {
                             iconType: IconTypes.PencilSquare,
                             type: Components.ButtonTypes.Secondary,
                             onClick: () => {
-                                Views.Item();
+                                Views.Item(item.Id);
                             }
                         });
                     }
