@@ -3,7 +3,6 @@ import { Navbar } from "gd-sprest-bs-vue";
 import store from "../store";
 
 export default {
-    name: "Navigation",
     components: { Navbar },
     data() {
         return {

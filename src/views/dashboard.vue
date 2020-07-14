@@ -2,12 +2,12 @@
   <div class="bs">
     <div class="row">
       <div class="col">
-        <TableFilter />
+        <TableFilter v-bind:filterText.sync="filterText" v-bind:searchText.sync="searchText" />
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <DataTable v-bind:onFilter="onFilter" v-bind:onSearch="onSearch" />
+        <DataTable v-bind:filter-text="filterText" v-bind:search-text="searchText" />
       </div>
     </div>
   </div>
@@ -16,14 +16,23 @@
 <script>
 import TableFilter from "../components/filter.vue";
 import DataTable from "../components/table.vue";
+import store from "../store";
 export default {
   components: { DataTable, TableFilter },
-  methods: {
-    onFilter(value) {
-      // Filter the table
+  data() {
+    return {
+      filterText: store.filterText,
+      searchText: store.searchText
+    };
+  },
+  watch: {
+    filterText() {
+      // Update the filter text
+      store.filterText = this.filterText;
     },
-    onSearch(value) {
-      // Search the table
+    searchText() {
+      // Update the search text
+      store.searchText = this.searchText;
     }
   }
 };

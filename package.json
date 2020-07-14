@@ -23,15 +23,15 @@
   "dependencies": {
     "datatables.net": "^1.10.21",
     "datatables.net-bs4": "^1.10.21",
-    "gd-sprest-bs": "^5.1.7",
-    "gd-sprest-bs-vue": "^0.1.7",
+    "gd-sprest-bs": "^5.1.8",
+    "gd-sprest-bs-vue": "^0.1.8",
     "jquery": "^3.5.1",
     "vue": "^2.6.11",
     "vue-router": "^3.3.4",
     "vue-template-compiler": "^2.6.11"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.4",
+    "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.6.0",

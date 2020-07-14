@@ -3,24 +3,50 @@ import { Components, Helper, IconTypes, SPTypes, Types } from "gd-sprest-bs";
 import { Table } from "gd-sprest-bs-vue";
 import DataSource from "../ds";
 import { Views } from "../router";
+import store from "../store";
 
 export default {
-    name: "DataTable",
     components: { Table },
-    methods: {
-        onFilter(value: string) {
-
-        },
-
-        onSearch(value: string) {
-
+    props: {
+        filterText: { type: String },
+        searchText: { type: String }
+    },
+    watch: {
+        filterText() { this.filterItems(); },
+        searchText() {
+            // Search the table
+            this.datatable.search(this.$props.searchText).draw();
         }
+    },
+    methods: {
+        filterItems() {
+            let items = [];
+
+            // See if a filter exists
+            if (this.$props.filterText) {
+                // Parse the items
+                for (let i = 0; i < this.items.length; i++) {
+                    let item = this.items[i];
+
+                    if (item.Status == this.$props.filterText) {
+                        // Add the item
+                        items.push(item);
+                    }
+                }
+            } else {
+                items = this.items;
+            }
+
+            // Update the rows
+            this.rows = items;
+        },
     },
     data() {
         return {
             datatable: null,
             displayFormUrl: "",
             newFormUrl: "",
+            items: null,
             rows: [],
             table: null,
             onRenderTable(table: Components.ITable) {
@@ -82,23 +108,27 @@ export default {
         }
     },
     mounted() {
-        // Get the form data
-        DataSource.getFormUrls().then(formUrls => {
-            // Save the urls
-            this.displayFormUrl = formUrls.displayFormUrl;
-            this.newFormUrl = formUrls.newFormUrl
-        });
+        // See if items exist
+        if (store.items == null) {
+            // Get the data
+            DataSource.getItems().then(
+                // Success
+                items => {
+                    // Set the rows
+                    this.items = items;
+                    this.rows = items;
 
-        // Get the data
-        DataSource.getItems().then(
-            // Success
-            items => {
-                // Set the rows
-                this.rows = items;
-            }
+                    // Update the store
+                    store.items = items;
+                }
 
-            // Error
-            // TODO
-        )
+                // Error
+                // TODO
+            )
+        } else {
+            // Restore the data
+            this.items = store.items;
+            this.filterItems();
+        }
     }
 }
