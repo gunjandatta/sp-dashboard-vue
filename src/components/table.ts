@@ -2,6 +2,7 @@ import * as $ from "jquery";
 import { Components, Helper, IconTypes, SPTypes, Types } from "gd-sprest-bs";
 import { Table } from "gd-sprest-bs-vue";
 import DataSource from "../ds";
+import { Views } from "../router";
 
 export default {
     name: "DataTable",
@@ -31,7 +32,9 @@ export default {
                     // You must initialize the datatable in a different thread
                     setTimeout(() => {
                         // Render the datatable
-                        this.datatable = $(table.el).DataTable({});
+                        this.datatable = $(table.el).DataTable({
+                            dom: '<"row justify-content-between"<"col-sm-12"tr>"<"col"l><"col"f><"col"p>>'
+                        });
                     }, 1000)
                 }
             },
@@ -46,6 +49,8 @@ export default {
                             iconType: IconTypes.PencilSquare,
                             type: Components.ButtonTypes.Secondary,
                             onClick: () => {
+                                Views.Item();
+                                return;
                                 // Ensure the form url exists
                                 if (this.props.displayFormUrl) {
                                     // Show the display form

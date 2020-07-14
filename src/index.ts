@@ -1,6 +1,7 @@
 import Vue from "vue";
 import { Configuration } from "./cfg";
 import App from "./app.vue";
+import router from "./router";
 import Strings from "./strings";
 
 // DataTables
@@ -18,9 +19,9 @@ let el = document.getElementById(Strings.AppElementId);
 if (el) {
     // Initialize the dashboard
     new Vue({
-        el,
+        router,
         render: h => h(App)
-    });
+    }).$mount(el);
 } else {
     // Log
     console.log("[" + Strings.ProjectName + "] Error finding the element with id '" + Strings.AppElementId + "'");

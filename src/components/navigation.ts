@@ -1,24 +1,22 @@
 import { Components, Helper, SPTypes } from "gd-sprest-bs";
 import { Navbar } from "gd-sprest-bs-vue";
+import store from "../store";
 
 export default {
     name: "Navigation",
     components: { Navbar },
-    props: {
-        onSearch: { type: Function }
-    },
     data() {
         return {
             navbarType: Components.NavbarTypes.Primary,
             searchBox: {
                 hideButton: true,
                 onChange: value => {
-                    // Execute the search event
-                    this.$props.onSearch(value);
+                    // Update the search value
+                    store.searchText = value;
                 },
                 onSearch: value => {
-                    // Execute the search event
-                    this.$props.onSearch(value);
+                    // Update the search value
+                    store.searchText = value;
                 }
             },
             items: [

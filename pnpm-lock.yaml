@@ -1,10 +1,11 @@
 dependencies:
   datatables.net: 1.10.21
   datatables.net-bs4: 1.10.21
-  gd-sprest-bs: 5.1.4
+  gd-sprest-bs: 5.1.7
   gd-sprest-bs-vue: 0.1.7
   jquery: 3.5.1
   vue: 2.6.11
+  vue-router: 3.3.4
   vue-template-compiler: 2.6.11
 devDependencies:
   '@babel/core': 7.10.4
@@ -904,7 +905,7 @@ packages:
   /@types/glob/7.1.3:
     dependencies:
       '@types/minimatch': 3.0.3
-      '@types/node': 14.0.22
+      '@types/node': 14.0.23
     dev: true
     resolution:
       integrity: sha512-SEYeGAIQIQX8NN6LDKprLjbrd5dARM5EXsd8GI/A5l0apYI1fGMWgPHSe4ZKL4eozlAyI+doUE9XbYS4xCkQ1w==
@@ -916,10 +917,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
-  /@types/node/14.0.22:
+  /@types/node/14.0.23:
     dev: true
     resolution:
-      integrity: sha512-emeGcJvdiZ4Z3ohbmw93E/64jRzUHAItSHt8nF7M4TGgQTiWqFVGB8KNpLGFmUHmHLvjvBgFwVlqNcq+VuGv9g==
+      integrity: sha512-Z4U8yDAl5TFkmYsZdFPdjeMa57NOvnaf1tljHzhouaPEp7LCj2JKkejpI1ODviIAQuW4CcQmxkQ77rnLsOOoKw==
   /@vue/component-compiler-utils/3.1.2:
     dependencies:
       consolidate: 0.15.1
@@ -2753,44 +2754,44 @@ packages:
       integrity: sha512-BRdNm8hbWzFzWHERTrejLqwHDfS4GibPoq5wjTPIoJHoBtKGPg3xAFfxmM+9ztbXelxcf2hwQcaz1PtmFeue8g==
   /gd-bs-vue/0.1.9:
     dependencies:
-      gd-bs: 3.0.8
+      gd-bs: 3.0.9
     dev: false
     resolution:
       integrity: sha512-5euVv1ab06ohwpC8VA6tInxpHMzvhdtnISEm+tjl9J0XPzjyOnCjwtRRIi6IEwO8OfJORodpMA1NuIw7JLO/AQ==
-  /gd-bs/3.0.8:
+  /gd-bs/3.0.9:
     dependencies:
       bootstrap: 5.0.0-alpha1_popper.js@1.16.1
       popper.js: 1.16.1
     dev: false
     resolution:
-      integrity: sha512-sxTLc3HLaFNR4vSuNzH71cfOmP6gfJ2GnfighiRA551wgCQkzy7oAGF5ladvmWQQlBVs09M46cQyXxOcTgqIyw==
+      integrity: sha512-NHg6HpOrs78+wSeEcNoOPje737ZWjzgq7Ifs2cR7zDf3j9VeidHTb9mQP28NmeSV0ml5mJzAMueKh1gLQrwX+w==
   /gd-sprest-bs-vue/0.1.7:
     dependencies:
       gd-bs-vue: 0.1.9
-      gd-sprest-bs: 5.1.4
+      gd-sprest-bs: 5.1.7
     dev: false
     resolution:
       integrity: sha512-ywexSuFsw+lOg4QaHlb2MJhyQGalMNWZVrydbmzM/e29EOfmcWOX43gG57XRPGyu/Tf6N5LiCv8ykWhCiBKrag==
-  /gd-sprest-bs/5.1.4:
+  /gd-sprest-bs/5.1.7:
     dependencies:
       flatpickr: 4.6.3
-      gd-bs: 3.0.8
-      gd-sprest: 5.8.7
+      gd-bs: 3.0.9
+      gd-sprest: 5.8.9
       gd-sprest-def: 0.7.8
     dev: false
     resolution:
-      integrity: sha512-vqcAOv+Kfrg19I2OZ44R3kFtA6FnP5/04uDGBfFw8t4kbtvsyrXZVkbmNhGCXj+0+ymN/uoFAKNsjw5t92TjaA==
+      integrity: sha512-Z46r8nZLIKz6WCzEuA6IwdkuO0Q0CJCFkVAApU2E3RaNPa4iMQZngUDbdCNbPwBtpAWt+m9Yx+fWkYttbJGOjg==
   /gd-sprest-def/0.7.8:
     dev: false
     resolution:
       integrity: sha512-p6VkuY5dP2IJMHeFRR1sp0gdHIDPOOuipxRwo8BrNQlDzGDM++lFCQxulgmPUONt66zdoh7ZxigxzNZcn8QQ8A==
-  /gd-sprest/5.8.7:
+  /gd-sprest/5.8.9:
     dependencies:
       core-js: 3.6.5
       gd-sprest-def: 0.7.8
     dev: false
     resolution:
-      integrity: sha512-bVvQZbaKvtmGqWfNy8kBhHn0NEU/bqvGkLhssEgCjlT2YfzFQ5freyvLKihba33EyvfqLXplJ7Ev0M4Ht7RaKA==
+      integrity: sha512-OK0rS8pGTZSR+FzY2F+K3PxRMo2X4GtvCGHEK5hT1W1OmAfhw2TtoJk7Aahchl/P6e4eGaLrjceaaqmsBZe6aw==
   /gensync/1.0.0-beta.1:
     dev: true
     engines:
@@ -5928,6 +5929,10 @@ packages:
         optional: true
     resolution:
       integrity: sha512-Y67VnGGgVLH5Voostx8JBZgPQTlDQeOVBLOEsjc2cXbCYBKexSKEpOA56x0YZofoDOTszrLnIShyOX1p9uCEHA==
+  /vue-router/3.3.4:
+    dev: false
+    resolution:
+      integrity: sha512-SdKRBeoXUjaZ9R/8AyxsdTqkOfMcI5tWxPZOUX5Ie1BTL5rPSZ0O++pbiZCeYeythiZIdLEfkDiQPKIaWk5hDg==
   /vue-style-loader/4.1.2:
     dependencies:
       hash-sum: 1.0.2
@@ -6223,7 +6228,7 @@ specifiers:
   css-loader: ^3.6.0
   datatables.net: ^1.10.21
   datatables.net-bs4: ^1.10.21
-  gd-sprest-bs: ^5.1.4
+  gd-sprest-bs: ^5.1.7
   gd-sprest-bs-vue: ^0.1.7
   jquery: ^3.5.1
   node-sass: ^4.14.1
@@ -6232,6 +6237,7 @@ specifiers:
   ts-loader: ^8.0.0
   vue: ^2.6.11
   vue-loader: ^15.9.3
+  vue-router: ^3.3.4
   vue-template-compiler: ^2.6.11
   webpack: ^4.43.0
   webpack-cli: ^3.3.12

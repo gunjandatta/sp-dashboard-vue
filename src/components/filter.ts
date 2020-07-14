@@ -1,15 +1,18 @@
 import { Components } from "gd-sprest-bs";
 import { CheckboxGroup, Navbar } from "gd-sprest-bs-vue";
+import store from "../store";
 
 export default {
     name: "Filter",
     components: { CheckboxGroup, Navbar },
+    sharedState: store,
     props: {
         onFilter: { type: Function }
     },
     data() {
         return {
             checkboxType: Components.CheckboxGroupTypes.Switch,
+            filter: store.filterText,
             items: [
                 { label: "Draft" },
                 { label: "Submitted" },
@@ -22,8 +25,8 @@ export default {
     },
     methods: {
         onChange(item: Components.ICheckboxGroupItem) {
-            // Call the change event
-            this.$props.onFilter(item ? item.label : "");
+            // Update the filter in the store
+            store.filterText = item ? item.label : "";
         }
     }
 }
