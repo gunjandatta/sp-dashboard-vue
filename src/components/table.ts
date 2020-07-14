@@ -15,7 +15,7 @@ export default {
         filterText() { this.filterItems(); },
         searchText() {
             // Search the table
-            this.datatable.search(this.$props.searchText).draw();
+            store.datatable.search(this.$props.searchText).draw();
         }
     },
     methods: {
@@ -58,9 +58,15 @@ export default {
                     // You must initialize the datatable in a different thread
                     setTimeout(() => {
                         // Render the datatable
-                        this.datatable = $(table.el).DataTable({
+                        store.datatable = $(table.el).DataTable({
                             dom: '<"row justify-content-between"<"col-sm-12"tr>"<"col"l><"col"f><"col"p>>'
                         });
+
+                        // See if a search result exist
+                        if (store.searchText) {
+                            // Search the table
+                            store.datatable.search(store.searchText).draw();
+                        }
                     }, 1000)
                 }
             },

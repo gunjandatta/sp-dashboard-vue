@@ -21,7 +21,7 @@ export default {
     },
     methods: {
         onChange(item: Components.ICheckboxGroupItem) {
-            // Update the filter in the store
+            // Update the filter property
             this.$emit("update:filterText", item ? item.label : "");
         }
     }

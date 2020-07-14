@@ -1,8 +1,8 @@
 dependencies:
   datatables.net: 1.10.21
   datatables.net-bs4: 1.10.21
-  gd-sprest-bs: 5.1.8
-  gd-sprest-bs-vue: 0.1.8
+  gd-sprest-bs: 5.1.9
+  gd-sprest-bs-vue: 0.1.9
   jquery: 3.5.1
   vue: 2.6.11
   vue-router: 3.3.4
@@ -2750,36 +2750,36 @@ packages:
       node: '>= 4.0.0'
     resolution:
       integrity: sha512-BRdNm8hbWzFzWHERTrejLqwHDfS4GibPoq5wjTPIoJHoBtKGPg3xAFfxmM+9ztbXelxcf2hwQcaz1PtmFeue8g==
-  /gd-bs-vue/0.2.1:
+  /gd-bs-vue/0.2.2:
     dependencies:
-      gd-bs: 3.0.9
+      gd-bs: 3.1.0
       vue: 2.6.11
     dev: false
     resolution:
-      integrity: sha512-tUngiSjmS9Cf+51fJEsNLb8bpse5JCkh89xk23mi33dGxf/fBNWCDGvMWrhHDUNFF3TbZDibxYt8F9rxN4of1w==
-  /gd-bs/3.0.9:
+      integrity: sha512-m5HREVVW9x9zyBxkjA2PCpzMvwfT/1PcWXzR/KgcECGoUuWu98W8XmTTMirokZX+GNy3iosviCyjnwqa9MtZ3g==
+  /gd-bs/3.1.0:
     dependencies:
       bootstrap: 5.0.0-alpha1_popper.js@1.16.1
       popper.js: 1.16.1
     dev: false
     resolution:
-      integrity: sha512-NHg6HpOrs78+wSeEcNoOPje737ZWjzgq7Ifs2cR7zDf3j9VeidHTb9mQP28NmeSV0ml5mJzAMueKh1gLQrwX+w==
-  /gd-sprest-bs-vue/0.1.8:
+      integrity: sha512-x1JqHZD0bfMmiRNAoQIZPxTtE5C+0oY0tX7SjZ78GPVU74/vbpiqkDHf07wNJRE+zt6ZL3Z+yQM6KX8rOXtXkA==
+  /gd-sprest-bs-vue/0.1.9:
     dependencies:
-      gd-bs-vue: 0.2.1
-      gd-sprest-bs: 5.1.8
+      gd-bs-vue: 0.2.2
+      gd-sprest-bs: 5.1.9
     dev: false
     resolution:
-      integrity: sha512-I1qnuJ8iAHMZyK/MCiP5JFDr8j5kHYMDoum2vlARyN6uI4MyZJ+3ACCCOoaQWcbS0nGkbEZgUdW5Sx2RWS7Fgw==
-  /gd-sprest-bs/5.1.8:
+      integrity: sha512-t/G84mMVhsJtVhYyedd7pmrTbVyThfopduj32OjsBuPED6HZ0msF4yjjFpxre7gdLEfBS3YYisCoIgDHBcj9mw==
+  /gd-sprest-bs/5.1.9:
     dependencies:
       flatpickr: 4.6.3
-      gd-bs: 3.0.9
+      gd-bs: 3.1.0
       gd-sprest: 5.9.0
       gd-sprest-def: 0.7.8
     dev: false
     resolution:
-      integrity: sha512-y2vqGtcHgl8ojmJ0pZ2D5g9+uIkM0+HMWfDHfGEnIJCVCQfyN8J3vLcWXPgr4jO0EszMiKzYQ74wH7kBfxLu9Q==
+      integrity: sha512-YOqC/zW0w2ZfGrHsNDhfYcZTvvaMJHBsSrxoyLVIJNPSLMsuFAb9gNMOCVDdhS4v1dO3NRUSL0Dus8mf3t0G3Q==
   /gd-sprest-def/0.7.8:
     dev: false
     resolution:
@@ -6227,8 +6227,8 @@ specifiers:
   css-loader: ^3.6.0
   datatables.net: ^1.10.21
   datatables.net-bs4: ^1.10.21
-  gd-sprest-bs: ^5.1.8
-  gd-sprest-bs-vue: ^0.1.8
+  gd-sprest-bs: ^5.1.9
+  gd-sprest-bs-vue: ^0.1.9
   jquery: ^3.5.1
   node-sass: ^4.14.1
   sass-loader: ^9.0.2

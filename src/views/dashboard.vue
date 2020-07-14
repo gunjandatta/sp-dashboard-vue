@@ -1,24 +1,30 @@
 <template>
-  <div class="bs">
+  <div class="dashboard">
     <div class="row">
       <div class="col">
-        <TableFilter v-bind:filterText.sync="filterText" v-bind:searchText.sync="searchText" />
+        <Navigation v-bind:searchText.sync="searchText" />
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <DataTable v-bind:filter-text="filterText" v-bind:search-text="searchText" />
+        <TableFilter v-bind:filterText.sync="filterText" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <DataTable v-bind:filterText="filterText" v-bind:searchText.sync="searchText" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import TableFilter from "../components/filter.vue";
 import DataTable from "../components/table.vue";
+import TableFilter from "../components/filter.vue";
+import Navigation from "../components/navigation.vue";
 import store from "../store";
 export default {
-  components: { DataTable, TableFilter },
+  components: { DataTable, Navigation, TableFilter },
   data() {
     return {
       filterText: store.filterText,
