@@ -1,7 +1,8 @@
 import { Components, Helper, SPTypes } from "gd-sprest-bs";
 import { Navbar } from "gd-sprest-bs-vue";
+import Vue from "vue";
 
-export default {
+export default Vue.extend({
     components: { Navbar },
     props: {
         searchText: { type: String }
@@ -28,7 +29,7 @@ export default {
                         // Display a new item form
                         Helper.SP.ModalDialog.showModalDialog({
                             title: "New Item",
-                            url: this.props.formUrl,
+                            url: this.$props.formUrl,
                             dialogReturnValueCallback: result => {
                                 // See if an item was created
                                 if (result == SPTypes.ModalDialogResult.OK) {
@@ -78,4 +79,4 @@ export default {
             ]
         }
     }
-}
+})

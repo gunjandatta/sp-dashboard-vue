@@ -1,11 +1,12 @@
 import * as $ from "jquery";
+import Vue from "vue";
 import { Components, IconTypes, Types } from "gd-sprest-bs";
 import { Progress, Table } from "gd-sprest-bs-vue";
 import DataSource from "../ds";
 import { Views } from "../router";
 import store from "../store";
 
-export default {
+export default Vue.extend({
     components: { Progress, Table },
     props: {
         filterText: { type: String },
@@ -126,4 +127,4 @@ export default {
             this.filterItems();
         }
     }
-}
+})

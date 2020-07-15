@@ -1,7 +1,8 @@
+import Vue from "vue";
 import { Components } from "gd-sprest-bs";
 import { CheckboxGroup, Navbar } from "gd-sprest-bs-vue";
 
-export default {
+export default Vue.extend({
     components: { CheckboxGroup, Navbar },
     props: {
         filterText: { type: String }
@@ -25,4 +26,4 @@ export default {
             this.$emit("update:filterText", item ? item.label : "");
         }
     }
-}
+});
