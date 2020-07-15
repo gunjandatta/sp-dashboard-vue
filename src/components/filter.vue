@@ -2,11 +2,11 @@
   <div class="card">
     <div class="card-body">
       <CheckboxGroup
-        v-bind:isInline="true"
-        v-bind:items="items"
-        v-bind:type="checkboxType"
-        v-bind:onChange="onChange"
-        v-bind:value="filterText"
+        :isInline="true"
+        :items="items"
+        :type="checkboxType"
+        :onChange="onChange"
+        :value="filterText"
       />
     </div>
   </div>

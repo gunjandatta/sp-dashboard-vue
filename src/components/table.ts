@@ -2,47 +2,20 @@ import * as $ from "jquery";
 import Vue from "vue";
 import { Components, IconTypes, Types } from "gd-sprest-bs";
 import { Progress, Table } from "gd-sprest-bs-vue";
-import DataSource from "../ds";
 import { Views } from "../router";
-import store from "../store";
 
 export default Vue.extend({
     components: { Progress, Table },
-    props: {
-        filterText: { type: String },
-        searchText: { type: String }
+    computed: {
+        items() { return this.$store.state.items; },
+        rows() { return this.$store.getters.getRows; },
+        searchText() { return this.$store.state.searchText; }
     },
     watch: {
-        // Filter the items
-        filterText() { this.filterItems(); },
-
         // Search the table
-        searchText() { store.datatable.search(this.$props.searchText).draw(); }
+        searchText() { this.$store.state.datatable.search(this.$store.state.searchText).draw(); }
     },
     methods: {
-        // Filters the items and sets the table rows
-        filterItems() {
-            let items = [];
-
-            // See if a filter exists
-            if (this.$props.filterText) {
-                // Parse the items
-                for (let i = 0; i < this.items.length; i++) {
-                    let item = this.items[i];
-
-                    if (item.Status == this.$props.filterText) {
-                        // Add the item
-                        items.push(item);
-                    }
-                }
-            } else {
-                items = this.items;
-            }
-
-            // Update the table rows
-            this.rows = items;
-        },
-
         // Applies the datatables.net plugin
         onRenderTable(table: Components.ITable) {
             // Save a reference to the table
@@ -53,14 +26,14 @@ export default Vue.extend({
                 // You must initialize the datatable in a different thread
                 setTimeout.apply(null, [() => {
                     // Render the datatable
-                    store.datatable = $(table.el).DataTable({
+                    this.$store.commit("setDatatable", $(table.el).DataTable({
                         dom: '<"row justify-content-between"<"col-sm-12"tr>"<"col"l><"col"f><"col"p>>'
-                    });
+                    }));
 
                     // See if a search result exist
-                    if (store.searchText) {
+                    if (this.$store.state.searchText) {
                         // Search the table
-                        store.datatable.search(store.searchText).draw();
+                        this.$store.state.datatable.search(this.$store.state.searchText).draw();
                     }
 
                     // Show the table
@@ -71,8 +44,6 @@ export default Vue.extend({
     },
     data() {
         return {
-            items: null,
-            rows: null,
             table: null,
             columns: [
                 {
@@ -102,29 +73,7 @@ export default Vue.extend({
         }
     },
     mounted() {
-        // See if items exist
-        if (store.items == null) {
-            // Get the data
-            DataSource.getItems().then(
-                // Success
-                items => {
-                    // Set the rows
-                    this.items = items;
-                    this.rows = items;
-
-                    // Update the store
-                    store.items = items;
-                }
-
-                // Error
-                // TODO
-            )
-        } else {
-            // Restore the data
-            this.items = store.items;
-
-            // Filter the items
-            this.filterItems();
-        }
+        // Get the items
+        this.$store.dispatch("loadItems");
     }
 })

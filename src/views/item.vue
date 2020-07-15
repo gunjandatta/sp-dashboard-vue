@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Button v-bind:iconType="iconType" v-bind:type="btnType" v-bind:onClick="goBack" />
+    <Button :iconType="iconType" :type="btnType" :onClick="goBack" />
     <h1>Item {{ this.$route.params.id }}</h1>
   </div>
 </template>

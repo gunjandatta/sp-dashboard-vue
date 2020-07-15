@@ -2,18 +2,18 @@
   <div>
     <Progress
       v-if="rows == null"
-      v-bind:min="0"
-      v-bind:max="100"
-      v-bind:size="100"
-      v-bind:is-animated="true"
-      v-bind:is-striped="true"
+      :min="0"
+      :max="100"
+      :size="100"
+      :is-animated="true"
+      :is-striped="true"
     />
     <Table
       v-if="rows != null"
       class-name="d-none"
-      v-bind:assign-to="onRenderTable"
-      v-bind:columns="columns"
-      v-bind:rows="rows"
+      :assign-to="onRenderTable"
+      :columns="columns"
+      :rows="rows"
     />
   </div>
 </template>

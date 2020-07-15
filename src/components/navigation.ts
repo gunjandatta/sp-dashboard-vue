@@ -4,40 +4,26 @@ import Vue from "vue";
 
 export default Vue.extend({
     components: { Navbar },
-    props: {
-        searchText: { type: String }
-    },
     data() {
         return {
             navbarType: Components.NavbarTypes.Primary,
             searchBox: {
                 hideButton: true,
-                value: this.searchText,
+                value: this.$store.state.searchText,
                 onChange: value => {
                     // Update the search property
-                    this.$emit("update:searchText", value);
+                    this.$store.commit("setSearch", value);
                 },
                 onSearch: value => {
                     // Update the search property
-                    this.$emit("update:searchText", value);
+                    this.$store.commit("setSearch", value);
                 }
             },
             items: [
                 {
                     text: "New Item",
                     onClick: () => {
-                        // Display a new item form
-                        Helper.SP.ModalDialog.showModalDialog({
-                            title: "New Item",
-                            url: this.$props.formUrl,
-                            dialogReturnValueCallback: result => {
-                                // See if an item was created
-                                if (result == SPTypes.ModalDialogResult.OK) {
-                                    // Refresh the page
-                                    document.location.reload();
-                                }
-                            }
-                        });
+                        // TODO
                     }
                 },
                 {

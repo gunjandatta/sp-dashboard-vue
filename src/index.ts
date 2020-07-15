@@ -2,6 +2,7 @@ import Vue from "vue";
 import { Configuration } from "./cfg";
 import App from "./app.vue";
 import router from "./router";
+import store from "./store";
 import Strings from "./strings";
 
 // DataTables
@@ -20,6 +21,7 @@ if (el) {
     // Initialize the dashboard
     new Vue({
         router,
+        store,
         render: h => h(App)
     }).$mount(el);
 } else {

@@ -28,7 +28,8 @@
     "jquery": "^3.5.1",
     "vue": "^2.6.11",
     "vue-router": "^3.3.4",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vuex": "^3.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
