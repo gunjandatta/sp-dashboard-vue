@@ -1,13 +1,4 @@
 import { ContextInfo, List, SPTypes } from "gd-sprest-bs";
-import Strings from "./strings";
-
-/**
- * Form URLs
- */
-interface IFormUrls {
-    displayFormUrl: string;
-    newFormUrl: string;
-}
 
 /**
  * Item
@@ -23,44 +14,12 @@ interface IItem {
  * Data Source
  */
 export default class {
-    static getFormUrls(): PromiseLike<IFormUrls> {
-        // Return a promise
-        return new Promise((resolve, reject) => {
-            let formUrls: IFormUrls = {} as any;
-
-            // See if this is an SP environment
-            if (ContextInfo.existsFl) {
-                // Load the list forms
-                List(Strings.Lists.Main).Forms().execute(forms => {
-                    // Parse the forms
-                    for (let i = 0; i < forms.results.length; i++) {
-                        let form = forms.results[i];
-
-                        // Save the url, based on the type
-                        switch (form.FormType) {
-                            // Display
-                            case SPTypes.PageType.DisplayForm:
-                                formUrls.displayFormUrl = form.ServerRelativeUrl;
-                                break;
-
-                            // New
-                            case SPTypes.PageType.NewForm:
-                                formUrls.newFormUrl = form.ServerRelativeUrl;
-                                break;
-                        }
-                    }
-
-                    // Resolve the promise
-                    resolve(formUrls);
-                });
-            }
-        });
-    }
-
     static getItems(): PromiseLike<Array<IItem>> {
         // Return a promise
         return new Promise((resolve, reject) => {
+            // See if the SP environment exists
             if (ContextInfo.existsFl) {
+                // TODO
             } else {
                 // Return test data
                 resolve([

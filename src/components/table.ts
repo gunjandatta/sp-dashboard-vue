@@ -12,13 +12,14 @@ export default {
         searchText: { type: String }
     },
     watch: {
+        // Filter the items
         filterText() { this.filterItems(); },
-        searchText() {
-            // Search the table
-            store.datatable.search(this.$props.searchText).draw();
-        }
+
+        // Search the table
+        searchText() { store.datatable.search(this.$props.searchText).draw(); }
     },
     methods: {
+        // Filters the items and sets the table rows
         filterItems() {
             let items = [];
 
@@ -37,41 +38,41 @@ export default {
                 items = this.items;
             }
 
-            // Update the rows
+            // Update the table rows
             this.rows = items;
         },
+
+        // Applies the datatables.net plugin
+        onRenderTable(table: Components.ITable) {
+            // Save a reference to the table
+            this.table = table;
+
+            // Render the datatable if items exist
+            if (this.rows.length > 0) {
+                // You must initialize the datatable in a different thread
+                setTimeout.apply(null, [() => {
+                    // Render the datatable
+                    store.datatable = $(table.el).DataTable({
+                        dom: '<"row justify-content-between"<"col-sm-12"tr>"<"col"l><"col"f><"col"p>>'
+                    });
+
+                    // See if a search result exist
+                    if (store.searchText) {
+                        // Search the table
+                        store.datatable.search(store.searchText).draw();
+                    }
+
+                    // Show the table
+                    table.el.classList.remove("d-none");
+                }, 100]);
+            }
+        }
     },
     data() {
         return {
-            displayFormUrl: "",
-            newFormUrl: "",
             items: null,
             rows: null,
             table: null,
-            onRenderTable(table: Components.ITable) {
-                // Save a reference to the table
-                this.table = table;
-
-                // Render the datatable if items exist
-                if (this.rows.length > 0) {
-                    // You must initialize the datatable in a different thread
-                    setTimeout.apply(null, [() => {
-                        // Render the datatable
-                        store.datatable = $(table.el).DataTable({
-                            dom: '<"row justify-content-between"<"col-sm-12"tr>"<"col"l><"col"f><"col"p>>'
-                        });
-
-                        // See if a search result exist
-                        if (store.searchText) {
-                            // Search the table
-                            store.datatable.search(store.searchText).draw();
-                        }
-
-                        // Show the table
-                        table.el.classList.remove("d-none");
-                    }, 100]);
-                }
-            },
             columns: [
                 {
                     name: "",
@@ -120,6 +121,8 @@ export default {
         } else {
             // Restore the data
             this.items = store.items;
+
+            // Filter the items
             this.filterItems();
         }
     }
