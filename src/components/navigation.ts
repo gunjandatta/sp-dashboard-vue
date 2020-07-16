@@ -1,6 +1,7 @@
-import { Components, Helper, SPTypes } from "gd-sprest-bs";
+import { Components, Helper } from "gd-sprest-bs";
 import { Navbar } from "gd-sprest-bs-vue";
 import Vue from "vue";
+import { Views } from "../router";
 
 export default Vue.extend({
     components: { Navbar },
@@ -23,7 +24,8 @@ export default Vue.extend({
                 {
                     text: "New Item",
                     onClick: () => {
-                        // TODO
+                        // Show the new form
+                        Views.Item(0);
                     }
                 },
                 {

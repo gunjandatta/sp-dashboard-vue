@@ -62,6 +62,10 @@ export default Vue.extend({
                     }
                 },
                 {
+                    name: "Title",
+                    title: "Title"
+                },
+                {
                     name: "ItemType",
                     title: "Item Type"
                 },

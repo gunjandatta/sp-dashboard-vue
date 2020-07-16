@@ -1,26 +1,12 @@
 <template>
   <div>
-    <Button :iconType="iconType" :type="btnType" :onClick="goBack" />
-    <h1>Item {{ this.$route.params.id }}</h1>
+    <ItemForm />
   </div>
 </template>
 
 <script>
-import { Components, IconTypes } from "gd-sprest-bs";
-import { Button } from "gd-sprest-bs-vue";
-import { Views } from "../router";
+import ItemForm from "../components/itemForm.vue";
 export default {
-  components: { Button },
-  data() {
-    return {
-      iconType: IconTypes.ArrowBarLeft,
-      btnType: Components.ButtonTypes.Secondary
-    }
-  },
-  methods: {
-    goBack() {
-      Views.Home();
-    }
-  }
+  components: { ItemForm }
 };
 </script>

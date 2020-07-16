@@ -1,16 +1,17 @@
+var project = require("./package.json");
 var path = require("path");
 var { VueLoaderPlugin } = require("vue-loader");
 
 // Return the configuration
 module.exports = (env, argv) => {
     return {
-        // Include the gd-sprest global library
-        entry: "./src/index.ts",
+        // Set the main source as the entry point
+        entry: path.resolve(__dirname, project.main),
 
         // Output location
         output: {
             path: path.resolve(__dirname, "dist"),
-            filename: "app" + (argv.mode === "production" ? ".min" : "") + ".js"
+            filename: project.name + (argv.mode === "production" ? ".min" : "") + ".js"
         },
 
         // Resolve the file names
