@@ -13,7 +13,7 @@ export default Vue.extend({
     },
     watch: {
         // Search the table
-        searchText() { this.$store.state.datatable.search(this.$store.state.searchText).draw(); }
+        searchText() { this.datatable.search(this.$store.state.searchText).draw(); }
     },
     methods: {
         // Applies the datatables.net plugin
@@ -33,7 +33,7 @@ export default Vue.extend({
                     // See if a search result exist
                     if (this.$store.state.searchText) {
                         // Search the table
-                        this.$store.state.datatable.search(this.$store.state.searchText).draw();
+                        this.datatable.search(this.$store.state.searchText).draw();
                     }
 
                     // Show the table
@@ -80,4 +80,4 @@ export default Vue.extend({
         // Get the items
         this.$store.dispatch("loadItems");
     }
-})
+});

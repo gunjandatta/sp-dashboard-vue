@@ -22,7 +22,6 @@ interface IItem {
 export default new Vuex.Store({
     // Application State
     state: {
-        datatable: null,
         displayFormUrl: null,
         editFormUrl: null,
         newFormUrl: null,
@@ -34,11 +33,6 @@ export default new Vuex.Store({
 
     // Synchronous Methods
     mutations: {
-        setDatatable(state, dt) {
-            // Update the datatable
-            state.datatable = dt;
-        },
-
         setItems(state, items) {
             // Update the items
             state.items = items;

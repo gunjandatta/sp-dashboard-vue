@@ -22,7 +22,6 @@
 import DataTable from "../components/table.vue";
 import TableFilter from "../components/filter.vue";
 import Navigation from "../components/navigation.vue";
-import store from "../store";
 export default {
   components: { DataTable, Navigation, TableFilter }
 }
