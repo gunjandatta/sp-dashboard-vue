@@ -5,7 +5,7 @@ import router from "./router";
 import store from "./store";
 import Strings from "./strings";
 
-// DataTables
+// DataTables.net
 import "jquery";
 import "datatables.net";
 import "datatables.net-bs4";
