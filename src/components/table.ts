@@ -26,9 +26,9 @@ export default Vue.extend({
                 // You must initialize the datatable in a different thread
                 setTimeout.apply(null, [() => {
                     // Render the datatable
-                    this.$store.commit("setDatatable", $(table.el).DataTable({
+                    this.datatable = $(table.el).DataTable({
                         dom: '<"row justify-content-between"<"col-sm-12"tr>"<"col"l><"col"f><"col"p>>'
-                    }));
+                    });
 
                     // See if a search result exist
                     if (this.$store.state.searchText) {
