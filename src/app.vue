@@ -7,3 +7,8 @@
 <script>
 export default {};
 </script>
+
+<style scoped>
+/** Datatables Bootstrap Plugin */
+@import "datatables.net-bs4";
+</style>
