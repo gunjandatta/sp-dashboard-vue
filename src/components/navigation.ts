@@ -25,7 +25,7 @@ export default Vue.extend({
                     text: "New Item",
                     onClick: () => {
                         // Show the new form
-                        Views.Item(0);
+                        Views.CreateItem();
                     }
                 },
                 {

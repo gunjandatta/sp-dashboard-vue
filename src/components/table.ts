@@ -56,7 +56,8 @@ export default Vue.extend({
                             iconType: IconTypes.PencilSquare,
                             type: Components.ButtonTypes.Secondary,
                             onClick: () => {
-                                Views.Item(item.Id);
+                                // View the item
+                                Views.ViewItem(item.Id);
                             }
                         });
                     }
