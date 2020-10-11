@@ -7,6 +7,6 @@
 <script>
 import ItemForm from "../components/itemForm.vue";
 export default {
-  components: { ItemForm },
+  components: { ItemForm }
 };
 </script>
