@@ -1,10 +1,5 @@
 <template>
-  <Navbar
-    brand="Dashboard"
-    :items="items"
-    :searchBox="searchBox"
-    :type="navbarType"
-/>
+  <Navbar v-bind="navbarProps" />
 </template>
 
 <script src="./navigation.ts"></script>

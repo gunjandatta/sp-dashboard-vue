@@ -1,20 +1,7 @@
 <template>
   <div>
-    <Progress
-      v-if="rows == null"
-      :min="0"
-      :max="100"
-      :size="100"
-      :is-animated="true"
-      :is-striped="true"
-    />
-    <Table
-      v-if="rows != null"
-      class-name="d-none"
-      :assign-to="onRenderTable"
-      :columns="columns"
-      :rows="rows"
-    />
+    <Progress v-if="rows == null" v-bind="progressProps" />
+    <Table v-if="rows != null" v-bind="tableProps" />
   </div>
 </template>
 

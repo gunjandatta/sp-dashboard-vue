@@ -9,21 +9,23 @@ export default Vue.extend({
     },
     data() {
         return {
-            checkboxType: Components.CheckboxGroupTypes.Switch,
-            items: [
-                { label: "Draft" },
-                { label: "Submitted" },
-                { label: "Rejected" },
-                { label: "Pending Approval" },
-                { label: "Approved" },
-                { label: "Archived" }
-            ]
-        }
-    },
-    methods: {
-        onChange(item: Components.ICheckboxGroupItem) {
-            // Update the filter text
-            this.$store.commit("setFilter", item ? item.label : "");
+            cbProps: {
+                isInline: true,
+                items: [
+                    { label: "Draft" },
+                    { label: "Submitted" },
+                    { label: "Rejected" },
+                    { label: "Pending Approval" },
+                    { label: "Approved" },
+                    { label: "Archived" }
+                ],
+                onChange: (item: Components.ICheckboxGroupItem) => {
+                    // Update the filter text
+                    this.$store.commit("setFilter", item ? item.label : "");
+                },
+                type: Components.CheckboxGroupTypes.Switch,
+                value: "filterText"
+            } as Components.ICheckboxGroupProps
         }
     }
 });
