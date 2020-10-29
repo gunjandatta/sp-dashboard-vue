@@ -14,10 +14,7 @@
 }
 
 /** Push the pagination to the right */
-.dataTables_wrapper .row > .col:last-child {
-  direction: rtl;
-}
 .dataTables_wrapper .pagination {
-  padding-right: 0;
+  justify-content: flex-end;
 }
 </style>

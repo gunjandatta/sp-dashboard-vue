@@ -22,7 +22,7 @@ export default Vue.extend({
                         setTimeout.apply(null, [() => {
                             // Render the datatable
                             this.datatable = $(table.el).DataTable({
-                                dom: '<"row justify-content-between"<"col-sm-12"tr>"<"col"l><"col"f><"col"p>>'
+                                dom: 'rt<"row"<"col-sm-4"l><"col-sm-4"i><"col-sm-4"p>>'
                             });
 
                             // See if a search result exist
