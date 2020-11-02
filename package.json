@@ -23,7 +23,7 @@
   "dependencies": {
     "datatables.net": "^1.10.22",
     "datatables.net-bs4": "^1.10.22",
-    "gd-sprest-bs": "^6.1.2",
+    "gd-sprest-bs": "^6.2.0",
     "gd-sprest-bs-vue": "^0.2.8",
     "jquery": "^3.5.1",
     "vue": "^2.6.12",
