@@ -4,9 +4,6 @@ import { CheckboxGroup, Navbar } from "gd-sprest-bs-vue";
 
 export default Vue.extend({
     components: { CheckboxGroup, Navbar },
-    computed: {
-        filterText() { return this.$store.state.filterText; }
-    },
     data() {
         return {
             cbProps: {
@@ -24,7 +21,7 @@ export default Vue.extend({
                     this.$store.commit("setFilter", item ? item.label : "");
                 },
                 type: Components.CheckboxGroupTypes.Switch,
-                value: "filterText"
+                value: this.$store.state.filterText;
             } as Components.ICheckboxGroupProps
         }
     }
