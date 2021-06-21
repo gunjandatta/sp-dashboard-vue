@@ -21,7 +21,7 @@ export default Vue.extend({
                     this.$store.commit("setFilter", item ? item.label : "");
                 },
                 type: Components.CheckboxGroupTypes.Switch,
-                value: this.$store.state.filterText;
+                value: this.$store.state.filterText
             } as Components.ICheckboxGroupProps
         }
     }
