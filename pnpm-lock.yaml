@@ -1,8 +1,8 @@
 dependencies:
   datatables.net: 1.10.23
   datatables.net-bs4: 1.10.23
-  gd-sprest-bs: 6.7.3
-  gd-sprest-bs-vue: 0.6.0_gd-sprest-bs@6.7.3+vue@2.6.12
+  gd-sprest-bs: 7.7.2
+  gd-sprest-bs-vue: 0.6.5_gd-sprest-bs@7.7.2+vue@2.6.12
   jquery: 3.5.1
   vue: 2.6.12
   vue-router: 3.4.9
@@ -941,10 +941,10 @@ packages:
       node: '>=10.0.0'
     resolution:
       integrity: sha512-HyYEUDeIj5rRQU2Hk5HTB2uHsbRQpF70nvMhVzi+VJR0X+xNEhjPui4/kBf3VeH/wqD28PT4sVOm8qqLjBrSZg==
-  /@popperjs/core/2.6.0:
+  /@popperjs/core/2.9.2:
     dev: false
     resolution:
-      integrity: sha512-cPqjjzuFWNK3BSKLm0abspP0sp/IGOli4p5I5fKFAzdS8fvjdOwDCfZqAaIiXd9lPkOWi3SUUfZof3hEb7J/uw==
+      integrity: sha512-VZMYa7+fXHdwIq1TDhSXoVmSPEGM/aa+6Aiq3nVVJ9bXr24zScr+NlKFKC3iPljA7ho/GAZr+d2jOf5GIRC30Q==
   /@types/eslint-scope/3.7.0:
     dependencies:
       '@types/eslint': 7.2.6
@@ -1471,20 +1471,18 @@ packages:
     dev: true
     resolution:
       integrity: sha1-jokKGD2O6aI5OzhExpGkK897yfU=
-  /bootstrap-icons/1.3.0:
+  /bootstrap-icons/1.5.0:
     dev: false
     engines:
       node: '>=10'
     resolution:
-      integrity: sha512-w6zQ93p626zmPDqDtET7VdB9EkoDtfmCBV53hunjntoCke6X5LafXf6TxPAP+ImjRAhhxAyA/sjzQnHBY0uoiQ==
-  /bootstrap/5.0.0-beta1_@popperjs+core@2.6.0:
-    dependencies:
-      '@popperjs/core': 2.6.0
+      integrity: sha512-44feMc7DE1Ccpsas/1wioN8ewFJNquvi5FewA06wLnqct7CwMdGDVy41ieHaacogzDqLfG8nADIvMNp9e4bfbA==
+  /bootstrap/5.0.1:
     dev: false
     peerDependencies:
-      '@popperjs/core': ^2.5.4
+      '@popperjs/core': ^2.9.2
     resolution:
-      integrity: sha512-UrHApw/WRmT7l2rlDdn5iXr7Jps/LlMZtJlLn9G41aGDfss48hyDeYyHtX1C6NHKVcmdUarGG+ve0LZB5iHyTQ==
+      integrity: sha512-Fl79+wsLOZKoiU345KeEaWD0ik8WKRI5zm0YSPj2oF1Qr+BO7z0fco6GbUtqjoG1h4VI89PeKJnMsMMVQdKKTw==
   /brace-expansion/1.1.11:
     dependencies:
       balanced-match: 1.0.0
@@ -1855,11 +1853,11 @@ packages:
     dev: true
     resolution:
       integrity: sha512-1sCb0wBXnBIL16pfFG1Gkvei6UzvKyTNYpiC41yrdjEv0UoJoq9E/abTMzyYJ6JpTkAj15dLjbqifIzEBDVvog==
-  /core-js/3.8.3:
+  /core-js/3.15.0:
     dev: false
     requiresBuild: true
     resolution:
-      integrity: sha512-KPYXeVZYemC2TkNEkX/01I+7yd+nX3KddKwZ1Ww7SKWdI2wQprSgLmrTddT8nw92AjEklTsPBoSdQBhbI1bQ6Q==
+      integrity: sha512-GUbtPllXMYRzIgHNZ4dTYTcUemls2cni83Q4Q/TrFONHfhcg9oEGOtaGHfb0cpzec60P96UKPvMkjX1jET8rUw==
   /core-util-is/1.0.2:
     dev: true
     resolution:
@@ -2610,54 +2608,55 @@ packages:
       node: '>= 4.0.0'
     resolution:
       integrity: sha512-BRdNm8hbWzFzWHERTrejLqwHDfS4GibPoq5wjTPIoJHoBtKGPg3xAFfxmM+9ztbXelxcf2hwQcaz1PtmFeue8g==
-  /gd-bs-vue/0.6.2_gd-sprest-bs@6.7.3+vue@2.6.12:
+  /gd-bs-vue/0.7.2_gd-sprest-bs@7.7.2+vue@2.6.12:
     dependencies:
-      gd-sprest-bs: 6.7.3
+      gd-sprest-bs: 7.7.2
+      vue: 2.6.12
+    dev: false
+    peerDependencies:
+      gd-bs: '*'
+      gd-sprest-bs: '*'
+      vue: '*'
+    resolution:
+      integrity: sha512-BYZKrse3nnlUMWQEWXdKjxU+zRa4bg0MNLZUQ7KZdCDfpS5ryPy0r5LgAJTOlXvJonBdwGhKAW2hjOezTlMSbw==
+  /gd-bs/4.6.2:
+    dependencies:
+      bootstrap: 5.0.1
+      bootstrap-icons: 1.5.0
+      core-js: 3.15.0
+      tippy.js: 6.3.1
+    dev: false
+    resolution:
+      integrity: sha512-wZQDNXez0/YfDkyYwhAZxjBR4tZDqDYT/Ff54UNIWblcJ+PXoqcs6S94T/oyDyrcSCFHMHHAH/QhXFgD4722yw==
+  /gd-sprest-bs-vue/0.6.5_gd-sprest-bs@7.7.2+vue@2.6.12:
+    dependencies:
+      gd-bs-vue: 0.7.2_gd-sprest-bs@7.7.2+vue@2.6.12
       vue: 2.6.12
     dev: false
     peerDependencies:
       gd-sprest-bs: '*'
       vue: '*'
     resolution:
-      integrity: sha512-Rwu4syPdFiULg9Eod4RrK1dDqt13UaTx10njm3gyHwc3lKXn21KFEwk93fT5nNCQld72UdKSilwE1CrzDTU7vA==
-  /gd-bs/4.0.0:
-    dependencies:
-      '@popperjs/core': 2.6.0
-      bootstrap: 5.0.0-beta1_@popperjs+core@2.6.0
-      bootstrap-icons: 1.3.0
-    dev: false
-    resolution:
-      integrity: sha512-fEEcXxOWT0VHqu+YTUNzRmEwu/jmtgRjkxtJOdeU901aQiCIjVYHaYwYqLHFZnwBiLMOh3k8gDk9XOPFinr5ZA==
-  /gd-sprest-bs-vue/0.6.0_gd-sprest-bs@6.7.3+vue@2.6.12:
-    dependencies:
-      gd-bs-vue: 0.6.2_gd-sprest-bs@6.7.3+vue@2.6.12
-      vue: 2.6.12
-    dev: false
-    peerDependencies:
-      gd-sprest-bs: '*'
-      vue: '*'
-    resolution:
-      integrity: sha512-fwC8QHQ4Qj5Zvj5B4iEQdGb7RiN2u21ANrCIXVX6AMhUq2MM+QPy/ND+AyNLfNRkUrV5RnuF0AFssHfKboRULA==
-  /gd-sprest-bs/6.7.3:
+      integrity: sha512-aE8OsNc5tWwTBmcL7ayV/Pxm9u9u58TaEIbIuEeOQyc+wnJftIcx2R8ulj1vovMVX1CLeu04g8jJW6hxYwU9Lw==
+  /gd-sprest-bs/7.7.2:
     dependencies:
       flatpickr: 4.6.9
-      gd-bs: 4.0.0
-      gd-sprest: 6.2.7
-      gd-sprest-def: 0.9.7
+      gd-bs: 4.6.2
+      gd-sprest: 6.4.9
+      gd-sprest-def: 1.0.2
     dev: false
     resolution:
-      integrity: sha512-SFfrwWl4Jnc1IeTeWSoP3o1ObI9NEf4FGXtPjKP/2/tpjOpxdX04PFI+JRg8jScHVvkGby7ZoDET4hxB2CdVWg==
-  /gd-sprest-def/0.9.7:
+      integrity: sha512-CZxxyWpCv/N74QZfIJevcwuN3bJwe9U9d7URninulcUsMvSVrIqOJ8nL9Q2wHXc1dxosoj0wPv321I6s1KpdfA==
+  /gd-sprest-def/1.0.2:
     dev: false
     resolution:
-      integrity: sha512-lDn3qhZYXsUSG8Fakss4RlrSy45HU+iW7GRwE4WoO9w5D0opDh+5HrwpM6ziG6Xd4YAnz5B4YTgKcpmL5NwNLg==
-  /gd-sprest/6.2.7:
+      integrity: sha512-0N4+aJeg/cojC5PAOlFrMWW13XKcPinQyk+OB3TuqULkP4xwc6neKGkfhNwgvoqzkUK8hTzzt6OSZEjDMGu01A==
+  /gd-sprest/6.4.9:
     dependencies:
-      core-js: 3.8.3
-      gd-sprest-def: 0.9.7
+      gd-sprest-def: 1.0.2
     dev: false
     resolution:
-      integrity: sha512-l7F3tDgqKYgy9oWoTqjwzQnwwRJWGcZU8UKemCTcp2eaJASUH4uJXoO4/fMGC9VhZ7YIQaIfXQ94erzeu5i5kw==
+      integrity: sha512-M/gK+rmiCSdugKdD/fuXEEaTAWLbae7gmQK/gJKdEN03vhHemp3q6gNiNO4wV9yNba/qF/6Umoaseq9xvb1ghw==
   /gensync/1.0.0-beta.2:
     dev: true
     engines:
@@ -5320,6 +5319,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-eHY7nBftgThBqOyHGVN+l8gF0BucP09fMo0oO/Lb0w1OF80dJv+lDVpXG60WMQvkcxAkNybKsrEIE3ZtKGmPrA==
+  /tippy.js/6.3.1:
+    dependencies:
+      '@popperjs/core': 2.9.2
+    dev: false
+    resolution:
+      integrity: sha512-JnFncCq+rF1dTURupoJ4yPie5Cof978inW6/4S6kmWV7LL9YOSEVMifED3KdrVPEG+Z/TFH2CDNJcQEfaeuQww==
   /to-fast-properties/2.0.0:
     dev: true
     engines:
@@ -5924,8 +5929,8 @@ specifiers:
   css-loader: ^5.0.1
   datatables.net: ^1.10.23
   datatables.net-bs4: ^1.10.23
-  gd-sprest-bs: ^6.7.3
-  gd-sprest-bs-vue: ^0.6.0
+  gd-sprest-bs: ^7.7.2
+  gd-sprest-bs-vue: ^0.6.5
   jquery: ^3.5.1
   node-sass: ^5.0.0
   sass-loader: ^10.1.1

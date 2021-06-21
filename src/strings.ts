@@ -2,7 +2,7 @@
  * Global Constants
  */
 export default {
-    AppElementId: "sp-dashboard",
+    AppElementId: "sp-dashboard-vue",
     GlobalVariable: "SPDashboard",
     Lists: {
         Main: "Dashboard"

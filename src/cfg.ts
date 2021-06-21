@@ -33,7 +33,7 @@ export const Configuration = Helper.SPConfig({
                         "Draft", "Submitted", "Rejected", "Pending Approval",
                         "Approved", "Archived"
                     ]
-                }
+                } as Helper.IFieldInfoChoice
             ],
             ViewInformation: [
                 {

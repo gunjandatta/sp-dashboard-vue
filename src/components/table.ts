@@ -1,6 +1,7 @@
 import * as $ from "jquery";
 import Vue from "vue";
-import { Components, IconTypes, Types } from "gd-sprest-bs";
+import { Components, Types } from "gd-sprest-bs";
+import { pencilSquare } from "gd-sprest-bs/build/icons/svgs/pencilSquare";
 import { Progress, Table } from "gd-sprest-bs-vue";
 import { Views } from "../router";
 
@@ -46,7 +47,7 @@ export default Vue.extend({
                             // Render a button
                             Components.Button({
                                 el,
-                                iconType: IconTypes.PencilSquare,
+                                iconType: pencilSquare,
                                 type: Components.ButtonTypes.Secondary,
                                 onClick: () => {
                                     // View the item
